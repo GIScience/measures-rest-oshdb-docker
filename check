@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+cd docker
+if [ ! "$(docker ps -q -a -f name=check-$1)" ]; then
+  docker-compose run -d  --volume $2:/data/user --entrypoint "tail -f /dev/null" --name "check-$1" measures_rest_oshdb
+fi
+if [ ! "$(docker ps -q -f name=check-$1)" ]; then
+  docker container restart "check-$1"
+fi
+docker exec "check-$1" mvn -e -q compile | grep '\[ERROR\]'

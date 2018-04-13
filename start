@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+cd docker
+if [ "$(docker ps -q -a -f name=user-$1)" ]; then
+  docker container restart "user-$1"
+else
+  docker-compose run -d --publish $3:8080 --volume $2:/data/user --name "user-$1" measures_rest_oshdb
+fi

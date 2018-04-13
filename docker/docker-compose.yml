@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  measures_rest_oshdb:
+    build: .
+    restart: on-failure
+    volumes:
+#      - /Users/franz-benjamin/fbm-sync/software/github-giscience/measures-rest-frontend/user:/data/user
+#      - ./../data/users/franz-benjamin:/data/user
+      - ./../data/dbs:/data/dbs
+    ports:
+      - 14242:8080

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+docker container stop "user-$1"
+docker container rm "user-$1"

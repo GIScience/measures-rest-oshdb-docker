@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+docker logs --since 10m "user-$1"
