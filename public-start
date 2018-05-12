@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+cd docker
+if [ "$(docker ps -q -a -f name=public)" ]; then
+  docker container restart "public"
+else
+  docker-compose run -d --publish 31415:8080 --volume $1:/data/user --name "public" measures_rest_oshdb
+fi
