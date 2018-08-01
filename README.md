@@ -1,6 +1,6 @@
 # Measure REST OSHDB Docker
 
-This software manages docker containers that run the [Measure REST OSHDB](???) framework.
+This software manages docker containers that run the [Measure REST OSHDB](https://github.com/giscience/oshdb) framework.
 
 ## Author
 
