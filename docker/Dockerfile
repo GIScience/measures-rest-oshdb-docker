@@ -1,5 +1,5 @@
 FROM maven:alpine
-MAINTAINER Franz-Benjamin Mocnik <mocnik@uni-heidelberg.de>
+MAINTAINER Sascha Fendrich <sascha.fendrich@uni-heidelberg.de>
 
 WORKDIR /home
 
